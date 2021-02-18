@@ -9,8 +9,8 @@ using Project5.Models;
 namespace Project5.Migrations
 {
     [DbContext(typeof(BookDBContext))]
-    [Migration("20210217230946_Initial")]
-    partial class Initial
+    [Migration("20210218024243_TakeSeven")]
+    partial class TakeSeven
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,25 +22,43 @@ namespace Project5.Migrations
 
             modelBuilder.Entity("Project5.Models.Book", b =>
                 {
+                    b.Property<int>("BookId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AuthorFirst")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorLast")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClassificationCategoryA")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClassificationCategoryB")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Isbn")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Author")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ClassificationCategory")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("Price")
-                        .HasColumnType("real");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<string>("Publisher")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Isbn");
+                    b.HasKey("BookId");
 
                     b.ToTable("Books");
                 });

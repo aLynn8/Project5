@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Aubrey Farnbach Section 2 Group 1
+
 namespace Project5.Models
 {
     public class SeedData
@@ -23,13 +25,17 @@ namespace Project5.Models
             {
                 context.Books.AddRange(
 
+                    //Books to enter into the database
+
                     new Book
                     {
                         Isbn = "978 - 0451419439",
                         Title = "Les Miserables",
-                        Author = "Victor Hugo",
+                        AuthorFirst = "Victor",
+                        AuthorLast = "Hugo",
                         Publisher = "Signet",
-                        ClassificationCategory = "Fiction, Classic",
+                        ClassificationCategoryA = "Fiction",
+                        ClassificationCategoryB = "Classic",
                         Price = 9.95
                     },
 
@@ -37,18 +43,22 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 0743270755",
                         Title = "Team of Rivals",
-                        Author = "Doris Kearns Goodwin",
+                        AuthorFirst = "Doris Kearns",
+                        AuthorLast = "Goodwin",
                         Publisher = "Simon & Schuster",
-                        ClassificationCategory = "Non - Fiction, Biography",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Biography",
                         Price = 14.58
                     },
                     new Book
                     {
                         Isbn = "978 - 0553384611",
                         Title = "The Snowball",
-                        Author = "Alice Schroeder",
+                        AuthorFirst = "Alice",
+                        AuthorLast = "Schroeder",
                         Publisher = "Bantam",
-                        ClassificationCategory = "Non - Fiction, Biography",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Biography",
                         Price = 21.54
                     },
 
@@ -56,9 +66,11 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 0812981254",
                         Title = "American Ulysses",
-                        Author = "Ronald C. White",
+                        AuthorFirst = "Ronald C.",
+                        AuthorLast = "White",
                         Publisher = "Random House",
-                        ClassificationCategory = "Non - Fiction, Biography",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Biography",
                         Price = 11.61
                     },
 
@@ -66,9 +78,11 @@ namespace Project5.Models
                     {
                         Isbn = " 978 - 0812974492",
                         Title = "Unbroken",
-                        Author = "Laura Hillenbrand",
+                        AuthorFirst = "Laura",
+                        AuthorLast = "Hillenbrand",
                         Publisher = "Random House",
-                        ClassificationCategory = "Non - Fiction, Historical",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Historical",
                         Price = 13.33
                     },
 
@@ -76,9 +90,11 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 0804171281",
                         Title = "The Great Train Robbery",
-                        Author = "Michael Crichton",
+                        AuthorFirst = "Michael",
+                        AuthorLast = "Crichton",
                         Publisher = "Vintage",
-                        ClassificationCategory = "Fiction, Historical Fiction",
+                        ClassificationCategoryA = "Fiction",
+                        ClassificationCategoryB = "Historical Fiction",
                         Price = 15.95
                     },
 
@@ -86,9 +102,11 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 1455586691",
                         Title = "Deep Work",
-                        Author = "Cal Newport",
+                        AuthorFirst = "Cal",
+                        AuthorLast = "Newport",
                         Publisher = "Grand Central Publishing",
-                        ClassificationCategory = "Non - Fiction, Self - Help",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Self - Help",
                         Price = 14.99
                     },
 
@@ -96,9 +114,11 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 1455523023",
                         Title = "It's Your Ship",
-                        Author = "Michael Abrashoff",
+                        AuthorFirst = "Michael",
+                        AuthorLast = "Abrashoff",
                         Publisher = "Grand Central Publishing",
-                        ClassificationCategory = "Non - Fiction, Self - Help",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Self - Help",
                         Price = 21.66
                     },
 
@@ -106,9 +126,11 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 1591847984",
                         Title = "The Virgin Way",
-                        Author = "Richard Branson",
+                        AuthorFirst = "Richard",
+                        AuthorLast = "Branson",
                         Publisher = "Portfolio",
-                        ClassificationCategory = "Non - Fiction, Business",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Business",
                         Price = 29.16
                     },
 
@@ -116,9 +138,11 @@ namespace Project5.Models
                     {
                         Isbn = "978 - 0553393613",
                         Title = "Sycamore Row",
-                        Author = "John Grisham",
+                        AuthorFirst = "John",
+                        AuthorLast = "Grisham",
                         Publisher = "Bantam",
-                        ClassificationCategory = "Fiction, Thrillers",
+                        ClassificationCategoryA = "Fiction",
+                        ClassificationCategoryB = "Thrillers",
                         Price = 15.03
                     }
 
