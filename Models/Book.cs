@@ -25,9 +25,10 @@ namespace Project5.Models
         public string AuthorLast { get; set; }
         [Required]
         public string Publisher { get; set; }
+        //This field stores whether the book is fiction or not (is not a repeat of B!)
         [Required]
-        //Classification Category Split into A and B
         public string ClassificationCategoryA {get; set;}
+        //This field stores the larger category of the book (thriller, biography, etc. (is not a repeat of A!)
         [Required]
         public string ClassificationCategoryB { get; set; }
         [Required]
