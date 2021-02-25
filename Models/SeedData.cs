@@ -36,7 +36,8 @@ namespace Project5.Models
                         Publisher = "Signet",
                         ClassificationCategoryA = "Fiction",
                         ClassificationCategoryB = "Classic",
-                        Price = 9.95
+                        Price = 9.95,
+                        Pages = 1488
                     },
 
                     new Book
@@ -48,7 +49,8 @@ namespace Project5.Models
                         Publisher = "Simon & Schuster",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Biography",
-                        Price = 14.58
+                        Price = 14.58,
+                        Pages = 944
                     },
                     new Book
                     {
@@ -59,7 +61,8 @@ namespace Project5.Models
                         Publisher = "Bantam",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Biography",
-                        Price = 21.54
+                        Price = 21.54,
+                        Pages = 832
                     },
 
                     new Book
@@ -71,7 +74,8 @@ namespace Project5.Models
                         Publisher = "Random House",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Biography",
-                        Price = 11.61
+                        Price = 11.61,
+                        Pages = 864
                     },
 
                     new Book
@@ -83,7 +87,8 @@ namespace Project5.Models
                         Publisher = "Random House",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Historical",
-                        Price = 13.33
+                        Price = 13.33,
+                        Pages = 528
                     },
 
                     new Book
@@ -95,7 +100,8 @@ namespace Project5.Models
                         Publisher = "Vintage",
                         ClassificationCategoryA = "Fiction",
                         ClassificationCategoryB = "Historical Fiction",
-                        Price = 15.95
+                        Price = 15.95,
+                        Pages = 288
                     },
 
                     new Book
@@ -107,7 +113,8 @@ namespace Project5.Models
                         Publisher = "Grand Central Publishing",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Self - Help",
-                        Price = 14.99
+                        Price = 14.99,
+                        Pages = 304
                     },
 
                     new Book
@@ -119,7 +126,8 @@ namespace Project5.Models
                         Publisher = "Grand Central Publishing",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Self - Help",
-                        Price = 21.66
+                        Price = 21.66,
+                        Pages = 240
                     },
 
                     new Book
@@ -131,7 +139,8 @@ namespace Project5.Models
                         Publisher = "Portfolio",
                         ClassificationCategoryA = "Non - Fiction",
                         ClassificationCategoryB = "Business",
-                        Price = 29.16
+                        Price = 29.16,
+                        Pages = 400
                     },
 
                     new Book
@@ -143,7 +152,47 @@ namespace Project5.Models
                         Publisher = "Bantam",
                         ClassificationCategoryA = "Fiction",
                         ClassificationCategoryB = "Thrillers",
-                        Price = 15.03
+                        Price = 15.03,
+                        Pages = 642
+                    },
+
+                    new Book
+                    {
+                        Isbn = "978 - 0307280503",
+                        Title = "Jerusalem: The Biography",
+                        AuthorFirst = "Simon Sebag",
+                        AuthorLast = "Montefiore",
+                        Publisher = "Vintage",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Historical",
+                        Price = 19.69,
+                        Pages = 704
+                    },
+
+                    new Book
+                    {
+                        Isbn = "978-1843430858",
+                        Title = "The Gulag Archipelago",
+                        AuthorFirst = "Aleksandr",
+                        AuthorLast = "Solzhenitsyn",
+                        Publisher = "Vintage Uk",
+                        ClassificationCategoryA = "Non- Fiction",
+                        ClassificationCategoryB = "Historical",
+                        Price = 19.99,
+                        Pages = 496
+                    },
+
+                    new Book
+                    {
+                        Isbn = "978-1629725918",
+                        Title = "Insights from a Prophet's Life Russell M. Nelson",
+                        AuthorFirst = "Sheri",
+                        AuthorLast = "Dew",
+                        Publisher = "Deseret Book",
+                        ClassificationCategoryA = "Non - Fiction",
+                        ClassificationCategoryB = "Biography",
+                        Price = 34.99,
+                        Pages = 452
                     }
 
                 );

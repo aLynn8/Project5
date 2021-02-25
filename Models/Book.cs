@@ -33,5 +33,7 @@ namespace Project5.Models
         public string ClassificationCategoryB { get; set; }
         [Required]
         public double Price { get; set; }
+        [Required]
+        public int Pages { get; set; }
     }
 }

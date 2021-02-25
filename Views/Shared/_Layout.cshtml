@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <!--Aubrey Farnbach (Wright) Section 2 Group 1-->
+    <!--Bootstrap styling on the column sizes, outline, top and bottom navs-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Project5</title>
@@ -12,7 +13,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Book Store</a>
+                <span class="border border-primary m-1 p-1">
+                    <a class="navbar-brand text-center" asp-area="" asp-controller="Home" asp-action="Index">Book Store</a>
+                </span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,12 +27,25 @@
                         </li>
                     </ul>
                 </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <img width="70" src="~/img/1200px-Closed_Book_Icon.svg.png" />
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
+
+    <div class="text-center">
+        <h1 class="display-4">Book Store Home</h1>
+    </div>
+
     <div class="container">
+        <!--This class sets up the pages to be organized by column-->
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div class="row m-1 p-1">
+                @RenderBody()
+            </div>
         </main>
     </div>
 

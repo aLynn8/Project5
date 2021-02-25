@@ -9,8 +9,8 @@ using Project5.Models;
 namespace Project5.Migrations
 {
     [DbContext(typeof(BookDBContext))]
-    [Migration("20210218024243_TakeSeven")]
-    partial class TakeSeven
+    [Migration("20210224071128_Project6")]
+    partial class Project6
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,9 @@ namespace Project5.Migrations
                     b.Property<string>("Isbn")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
