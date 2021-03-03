@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!--Aubrey Farnbach (Wright) Section 2 group 1
+    This partial view contains the table contents with the book information-->
+
+@model Book
+
+<tr>
+    <td>@Model.Title</td>
+    <!--Presents full name-->
+    <td>@Model.AuthorFirst @Model.AuthorLast</td>
+    <td>@Model.Publisher</td>
+    <!--Presents fiction/non-fiction and the specific category together in a list-->
+    <td>@Model.ClassificationCategoryA, @Model.ClassificationCategoryB</td>
+    <!--formats with dollar sign-->
+    <td>$@Model.Price</td>
+    <td>@Model.Isbn</td>
+    <td>@Model.Pages</td>
+</tr>
