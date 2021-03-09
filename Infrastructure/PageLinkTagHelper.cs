@@ -51,10 +51,11 @@ namespace Project5.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
                 PageUrlValues["pageNum"] = i;
-                tag.Attributes["href"] = urlHelper.Action(PageAction,
-                    PageUrlValues);
 
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+                //tag.Attributes["href"] = urlHelper.Action(PageAction,
+                   // PageUrlValues);
+
+                tag.Attributes["href"] = urlHelper.Action(PageAction, new { pageNum = i });
 
                 if (PageClassesEnabled)
                 {
