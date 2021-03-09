@@ -10,7 +10,19 @@
 @model Book
 
 <tr>
-    <td>@Model.Title</td>
+    <td>
+        @Model.Title
+        <form id="@Model.Isbn" asp-page="/Purchase" method="post">
+            <input type="hidden" asp-for="Isbn" />
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+            <span class="card-text p-1">
+                <button type="submit" class="btn-sucess btn-sm pull-right" style="float:right">
+                    Purchase
+                </button>
+            </span>
+
+        </form>
+    </td>
     <!--Presents full name-->
     <td>@Model.AuthorFirst @Model.AuthorLast</td>
     <td>@Model.Publisher</td>
@@ -21,3 +33,4 @@
     <td>@Model.Isbn</td>
     <td>@Model.Pages</td>
 </tr>
+

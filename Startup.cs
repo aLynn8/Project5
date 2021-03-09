@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -30,10 +31,20 @@ namespace Project5
 
             services.AddDbContext<BookDBContext>(options =>
            {
-               options.UseSqlServer(Configuration["ConnectionStrings:BookStoreConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:BookStoreConnection"]);
            });
 
             services.AddScoped<IBookRepository, EFBookRepository>();
+
+            services.AddRazorPages();
+
+            //To save cart contents during a user's visit
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            //Specifies that the same object should be used to satisfy requests for Cart instances.
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            //Specifies that the same object should always be used
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +63,9 @@ namespace Project5
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            //To save cart contents during a user's visit. All we can store in a session is integers, strings and bytes to store other things we need to use a Json file (convert to it then from it)
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -59,23 +73,26 @@ namespace Project5
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{Category}/{page:int}",
+                    "{Category}/{pageNum:int}",
                     new { Controller = "Home", Action = "Index"});
 
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { Controller = "Home", Action = "Index" });
 
                 endpoints.MapControllerRoute("category",
                     "{category}",
-                    new { Controller = "Home", Action = "Index", page = 1 });
+                    new { Controller = "Home", Action = "Index", pageNum = 1 });
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "Books/{page}",
+                    "Books/{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                //Setting the url mapping system to handle thiese requests that come in specifically for the razor pages
+                endpoints.MapRazorPages();
             });
 
             SeedData.EnsurePopulated(app);

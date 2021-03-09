@@ -7,10 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Project5</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Book Store</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <span class="border border-primary m-1 p-1">
@@ -27,6 +39,9 @@
                         </li>
                     </ul>
                 </div>
+                <div>
+                    <vc:cart-summary />
+                </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
                         <img width="70" src="~/img/1200px-Closed_Book_Icon.svg.png" />
@@ -38,7 +53,7 @@
 
     <div class="text-center">
         <h1 class="display-4">Book Store Home</h1>
-    </div>
+    </div> -->
 
     <div class="container">
         <!--This class sets up the pages to be organized by column-->

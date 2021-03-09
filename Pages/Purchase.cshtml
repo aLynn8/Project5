@@ -1,0 +1,52 @@
+﻿@page
+@model Project5.Pages.PurchaseModel
+@{
+}
+<!--Aubrey Farnbach (Wright) Section 2 Group 2-->
+<!--This is MVVM (Model View View Model) and his is gaining in popularity-->
+<h2>Your Cart</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var line in Model.Cart.Lines)
+        {
+        <tr>
+            <td class="text-left">@line.Book.Title</td>
+            <td class="text-center">@line.Quantity</td>
+            <td class="text-right">$@line.Book.Price</td>
+            <td class="text-right">@((line.Book.Price * line.Quantity).ToString("c"))</td>
+            <!--Button to remove items-->
+            <td class="text-center">
+                <form asp-page-handler="Remove" method="post">
+                    <input type="hidden" name="Isbn" value="@line.Book.Isbn" />
+                    <input type="hidden" name="returnUrl" value="Model.ReturnUrl" />
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Remove
+                    </button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td class="text-right" colspan="3">Total:</td>
+            <td class="text-right">@Model.Cart.ComputeTotalSum().ToString("c")</td>
+        </tr>
+    </tfoot>
+    
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>

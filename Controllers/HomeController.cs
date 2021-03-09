@@ -26,7 +26,7 @@ namespace Project5.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
             //Passes in book data from database
             //query in Linq
@@ -35,12 +35,12 @@ namespace Project5.Controllers
                     Books = _repository.Books
                     .Where(p => category == null || p.ClassificationCategoryB == category)
                         .OrderBy(p => p.Title)
-                        .Skip((page - 1) * PageSize)
+                        .Skip((pageNum - 1) * PageSize)
                         .Take(PageSize)
                         ,
                     PagingInfo = new PagingInfo
                     {
-                        CurrentPage = page,
+                        CurrentPage = pageNum,
                         ItemsPerPage = PageSize,
                         //Dynamically updates the nu,ber of pages based on the user's category selection
 
